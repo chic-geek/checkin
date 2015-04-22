@@ -23,7 +23,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc           # bundle exec rake doc:rails gener
 
 gem 'bootstrap-sass', '~> 3.3.4.1'            # Twitter's Bootstrap framework converted to sass
 gem 'devise', '~> 3.4.1'                      # Flexible authentication solution for Rails with Warden
-
+gem 'carrierwave', '~> 0.10.0'                # Upload files in your Ruby applications
+gem 'mini_magick', '~> 4.2.3'                 # Manipulate images with minimal use of memory via ImageMagick / GraphicsMagick
+gem 'fog', '~> 1.29.0'                        # The Ruby cloud services library. Supports all major cloud providers including AWS
+gem 'figaro', '~> 1.1.0'                      # Simple, Heroku-friendly Rails app configuration using ENV and a single YAML file
 
 
 # Environment grouped gems

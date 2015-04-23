@@ -8,9 +8,26 @@
 </head>
 <body>
 
+  <% if notice %>
+    <div class="message message-success">
+      <div class="message-content">
+        <strong>Success!</strong>&nbsp;
+        <%= notice %>
+      </div>
+    </div>
+  <% end %>
+
+  <% if alert %>
+    <div class="message message-danger">
+      <div class="message-content">
+        <strong>Easy tiger!</strong>&nbsp;
+        <%= alert %>
+      </div>
+    </div>
+  <% end %>
+
   <nav class="navbar navbar-default">
     <div class="container">
-
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
           <span class="sr-only">Toggle navigation</span>
@@ -20,7 +37,6 @@
         </button>
         <%= link_to "Checkin app", root_path, class: 'navbar-brand' %>
       </div>
-
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
@@ -32,42 +48,13 @@
           <% end %>
         </ul>
       </div>
-
     </div>
   </nav>
 
   <div class="container">
-
-    <% if notice %>
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="alert-container">
-          <div class="alert alert-success .alert-dismissible">
-            <button class="close" type="button" data-dismiss="alert">&times;</button>
-            <%= notice %>
-          </div>
-        </div>
-      </div>
-    </div>
-    <% end %>
-
-    <% if alert %>
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="alert-container">
-          <div class="alert alert-danger .alert-dismissible">
-            <button class="close" type="button" data-dismiss="alert">&times;</button>
-            <%= alert %>
-          </div>
-        </div>
-      </div>
-    </div>
-    <% end %>
-
     <div class="row">
       <%= yield %>
     </div>
-
   </div>
 
 </body>

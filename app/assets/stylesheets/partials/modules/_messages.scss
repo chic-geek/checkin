@@ -14,50 +14,52 @@ $message-min-height:  ($message-padding * 2) + $message-line-height;
 // Module core
 // ------------------------------------------------------------------------
 .message {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: $message-zindex;
+  @extend .animate;
+  @extend .bounceInDown;
+  @include animation-delay(0.5s);
+}
+
+.message-wrap {
   border-bottom-width: 1px;
   border-bottom-style: solid;
   line-height: $message-line-height;
   min-height: $message-min-height;
   padding-top: $message-padding;
   padding-bottom: $message-padding;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: $message-zindex;
+}
 
-  @extend .animate;
-  @extend .bounceInDown;
-  @include animation-delay(1s);
-
-  .message-content {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-  }
+.message-content {
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
 
 
 // Module variations
 // ------------------------------------------------------------------------
-.message-success {
+.message-success .message-wrap {
   color: rgb(60, 118, 61);
   background-color: rgba(223, 240, 216, 0.9);
   border-bottom-color: rgb(214, 233, 198);
 }
 
-.message-info {
+.message-info .message-wrap {
   color: rgb(49, 112, 143);
   background-color: rgba(217, 237, 247, 0.9);
   border-bottom-color: rgb(188, 232, 241);
 }
 
-.message-warning {
+.message-warning .message-wrap {
   color: rgb(138, 109, 59);
   background-color: rgba(252, 248, 227, 0.9);
   border-bottom-color: (250, 235, 204);
 }
 
-.message-danger {
+.message-danger .message-wrap {
   color: rgb(169, 68, 66);
   background-color: rgba(242, 222, 222, 0.85);
   border-bottom-color: rgb(235, 204, 209);

@@ -9,21 +9,23 @@
 <body>
 
   <% if notice %>
-    <div class="message message-success">
+  <div class="message message-success" data-hook="js-message">
+    <div class="message-wrap">
       <div class="message-content">
-        <strong>Success!</strong>&nbsp;
         <%= notice %>
       </div>
     </div>
+  </div>
   <% end %>
 
   <% if alert %>
-    <div class="message message-danger">
+  <div class="message message-danger" data-hook="js-message">
+    <div class="message-wrap">
       <div class="message-content">
-        <strong>Easy tiger!</strong>&nbsp;
         <%= alert %>
       </div>
     </div>
+  </div>
   <% end %>
 
   <nav class="navbar navbar-default">
@@ -56,6 +58,16 @@
       <%= yield %>
     </div>
   </div>
+
+  <script>
+    $(document).ready(function(){
+      setTimeout(function(){
+        $('.message .message-wrap').fadeOut('slow', function(){
+          $('[data-hook="js-message"]').remove();
+        });
+      }, 4500);
+    });
+  </script>
 
 </body>
 </html>

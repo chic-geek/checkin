@@ -5,10 +5,11 @@
 
 // Setup
 // ------------------------------------------------------------------------
-$message-zindex:      10;
-$message-padding:     15px;
-$message-line-height: 20px;
-$message-min-height:  ($message-padding * 2) + $message-line-height;
+$message-zindex:          10;
+$message-padding:         15px;
+$message-line-height:     20px;
+$message-min-height:      ($message-padding * 2) + $message-line-height;
+$message-animation-delay: 0.3s;
 
 
 // Module core
@@ -20,7 +21,7 @@ $message-min-height:  ($message-padding * 2) + $message-line-height;
   z-index: $message-zindex;
   @extend .animate;
   @extend .bounceInDown;
-  @include animation-delay(0.5s);
+  @include animation-delay($message-animation-delay);
 }
 
 .message-wrap {

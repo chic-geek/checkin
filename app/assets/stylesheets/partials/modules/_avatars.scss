@@ -1,0 +1,24 @@
+// ------------------------------------------------------------------------
+// Module: Avatars
+// ------------------------------------------------------------------------
+//
+
+// Setup
+// ------------------------------------------------------------------------
+$avatar-alpha-size: 50px;
+$avatar-beta-size: 150px;
+$avatar-gamma-size: 300px;
+
+
+// Module core
+// ------------------------------------------------------------------------
+.avatar {
+  display: inline-block;
+  text-align: center;
+
+  img {
+    border-radius: 50%;
+    height: $avatar-beta-size;
+    width: $avatar-beta-size;
+  }
+}

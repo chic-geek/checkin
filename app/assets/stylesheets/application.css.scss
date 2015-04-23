@@ -22,6 +22,7 @@
 // Vendor
 // ------------------------------------------------------------------------
 //
+@import 'partials/vendor/font-lato.scss';
 
 
 
@@ -29,7 +30,8 @@
 // Objects
 // ------------------------------------------------------------------------
 //
-
+@import 'partials/objects/clearfix';
+@import 'partials/objects/block-grids';
 
 
 // ------------------------------------------------------------------------
@@ -39,6 +41,7 @@
 @import 'partials/modules/animations';
 @import 'partials/modules/messages';
 @import 'partials/modules/cards';
+@import 'partials/modules/avatars';
 
 
 

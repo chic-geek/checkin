@@ -23,6 +23,17 @@ $card-border-color: rgb(230, 230, 230);
   margin-bottom: 40px;
 }
 
+.card-avatar {
+  margin-bottom: 10px;
+  text-align: center;
+
+  img {
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+  }
+}
+
 .card-title {
   text-align: center;
   margin-top: 0;
@@ -32,6 +43,8 @@ $card-border-color: rgb(230, 230, 230);
   border-bottom-style: solid;
   border-bottom-color: $card-border-color;
   box-shadow: 0 1px 0 rgb(255, 255, 255);
+  @extend .font-lato;
+  @extend .font-lato-light;
 }
 
 .card-btn {
@@ -44,6 +57,15 @@ $card-border-color: rgb(230, 230, 230);
 // ------------------------------------------------------------------------
 .card-type-form {
   max-width: 350px;
+}
+
+.card-type-sign-up {
+  max-width: 400px;
+}
+
+.card-type-sign-in,
+.card-type-sign-up {
+  margin-top: 30px;
 }
 
 

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="200px" height="200px" viewBox="0 768 200 200" enable-background="new 0 768 200 200" xml:space="preserve">
+<g>
+	<g id="background">
+		<rect y="768" fill="#E1E1E1" width="200" height="200"/>
+	</g>
+	<g id="avatar">
+		<g>
+			<circle fill="#BDBDBD" cx="100" cy="847.1" r="31.2"/>
+			<ellipse fill="#BDBDBD" cx="100" cy="926.3" rx="64.6" ry="31.2"/>
+			<rect x="35.4" y="926.3" fill="#BDBDBD" width="129.2" height="41.7"/>
+		</g>
+	</g>
+</g>
+</svg>

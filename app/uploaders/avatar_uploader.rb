@@ -37,8 +37,18 @@ class AvatarUploader < CarrierWave::Uploader::Base
   #   process :resize_to_fit => [50, 50]
   # end
 
-  version :tiny do
+  # Each size is set to double (@2x) what it should be displayed at
+  # in prep for retina screens
+  version :alpha do
     process :resize_to_fit => [100, 100]
+  end
+
+  version :beta do
+    process :resize_to_fit => [300, 300]
+  end
+
+  version :gamma do
+    process :resize_to_fit => [600, 600]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

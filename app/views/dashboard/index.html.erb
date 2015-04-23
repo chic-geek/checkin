@@ -1,27 +1,22 @@
 <div class="col-xs-12">
+
   <h1>Dashboard</h1>
+  <ul class="block-grid">
+    <% @users.each do |user| %>
+    <li class="block-grid-item">
+      <a class="avatar" href="#">
+        <% if user.avatar? %>
+          <%= image_tag(current_user.avatar.beta.url) %>
+        <% else %>
+          <%= image_tag "avatar-default.svg" %>
+        <% end %>
+        <p>
+          <span><%= user.first_name %></span>
+          <span><%= user.last_name %></span>
+        </p>
+      </a>
+    </li>
+    <% end %>
+  </ul>
 
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>#</td>
-        <th>First name</td>
-        <th>Last name</td>
-        <th>Email</td>
-        <th>Role</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @users.each do |user| %>
-      <tr>
-        <td><%= user.id %></td>
-        <td><%= user.first_name %></td>
-        <td><%= user.last_name %></td>
-        <td><%= user.email %></td>
-        <td><%# user.role %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
 </div>

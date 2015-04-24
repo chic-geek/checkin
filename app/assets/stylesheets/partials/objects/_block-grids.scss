@@ -12,14 +12,21 @@ $block-grid-item-padding: 20px;
 .block-grid {
   margin: 0;
   padding: 0;
+  list-style: none;
   @extend %clearfix;
 }
 
 .block-grid-item {
-  float: left;
-  list-style: none;
+  padding-top: $block-grid-item-padding;
   padding-right: $block-grid-item-padding;
   padding-left: $block-grid-item-padding;
+  text-align: center;
+  float: left;
+  width: 50%;
+
+  @media (min-width: $screen-sm-min) { width: 33.33%; } // 768+
+  @media (min-width: $screen-md-min) { width: 25%;    } // 992+
+  @media (min-width: $screen-lg-min) { width: 16.66%; } // 1200+
 }
 
 

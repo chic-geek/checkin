@@ -18,7 +18,8 @@ $avatar-gamma-size: 300px;
 
   img {
     border-radius: 50%;
-    height: $avatar-beta-size;
+    height: auto;
+    max-width: 100%;
     width: $avatar-beta-size;
   }
 }

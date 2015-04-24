@@ -15,3 +15,14 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+
+// Messages disappearing act
+//
+$(document).ready(function(){
+  setTimeout(function(){
+    $('.message .message-wrap').fadeOut('slow', function(){
+      $('[data-hook="js-message"]').remove();
+    });
+  }, 4000);
+});

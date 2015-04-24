@@ -4,7 +4,7 @@
   <ul class="block-grid">
     <% @users.each do |user| %>
     <li class="block-grid-item">
-      <a class="avatar" href="#">
+      <%= link_to '#', class: 'avatar' do %>
         <% if user.avatar? %>
           <%= image_tag(current_user.avatar.beta.url) %>
         <% else %>
@@ -14,7 +14,7 @@
           <span><%= user.first_name %></span>
           <span><%= user.last_name %></span>
         </p>
-      </a>
+      <% end %>
     </li>
     <% end %>
   </ul>

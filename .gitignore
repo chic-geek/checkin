@@ -19,3 +19,6 @@ vendor/bundle
 
 # Ignore application configuration
 /config/application.yml
+
+# Ignore the uploads direction
+/public/uploads

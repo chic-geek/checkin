@@ -20,6 +20,21 @@ $avatar-gamma-size: 300px;
     border-radius: 50%;
     height: auto;
     max-width: 100%;
+    width: $avatar-alpha-size;
+  }
+}
+
+
+// Module variations
+// ------------------------------------------------------------------------
+.avatar-beta {
+  img {
     width: $avatar-beta-size;
+  }
+}
+
+.avatar-gamma {
+  img {
+    width: $avatar-gamma-size;
   }
 }

@@ -9,9 +9,16 @@
         <% if current_user.avatar? %>
         <div class="form-group">
           <p>Current avatar:</p>
-          <%= image_tag(current_user.avatar.tiny.url, class: 'img-circle') %>
+          <div class="avatar avatar-beta">
+            <%= image_tag(current_user.avatar.alpha.url) %>
+          </div>
         </div>
+        <% else %>
+          <div class="avatar avatar-beta">
+            <%= image_tag "avatar-default.svg" %>
+          </div>
         <% end %>
+
         <div class="form-group">
           <%= f.label :avatar %>
           <%= f.file_field :avatar %>

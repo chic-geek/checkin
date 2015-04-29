@@ -4,4 +4,4 @@
 <% else %>
   <%= image_tag "avatar-default.svg" %>
 <% end %>
-<%= button_to 'Check-in/out', user_checkin_path, class: 'btn btn-success', method: :patch %>
+<%= button_to 'Check-in/out', user_checkin_path, class: 'btn btn-success', method: :patch, data: { :"checkin-button" => true, :"user-id" => @user.id } %>

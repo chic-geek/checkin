@@ -16,16 +16,35 @@
 //= require bootstrap
 //= require_tree .
 
-
-// Messages disappearing act
-//
 $(document).ready(function(){
+
+  // FADING MESSAGES
+  // ==========================================================================
+  //
   setTimeout(function(){
     $('.message .message-wrap').fadeOut('slow', function(){
       $('[data-hook="js-message"]').remove();
     });
   }, 4000);
 
+
+
+  // SETUP CHECKIN EVENT HANDLERS
+  // ==========================================================================
+  //
+  function setupCheckinEventHandlers() {
+
+    // <%= button_to "Delete", delete_todo_path(todo),
+    //       method: :delete, data: { :"delete-todo-button" => true, :"todo-id" => todo.id  } %>
+    $(document).on("click", "[data-checkin-button]", checkinEvent);
+  };
+  setupCheckinEventHandlers();
+
+
+
+  // CHECKIN EVENT
+  // ==========================================================================
+  //
   function checkinEvent(event) {
     event.preventDefault();
 
@@ -50,16 +69,10 @@ $(document).ready(function(){
       // todo's table row.
       clickedElement.attr('value', 'Checked out');
     };
-
     $.ajax(ajaxOptions).done(checkout).fail(handleError);
+
   };
 
-  function setupCheckinEventHandlers() {
 
-    // <%= button_to "Delete", delete_todo_path(todo),
-    //       method: :delete, data: { :"delete-todo-button" => true, :"todo-id" => todo.id  } %>
-    $(document).on("click", "[data-checkin-button]", checkinEvent);
-  };
 
-  setupCheckinEventHandlers();
 });

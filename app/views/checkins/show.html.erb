@@ -1,0 +1,7 @@
+<h1>Checkin show template</h1>
+<% if @user.avatar? %>
+  <%= image_tag(@user.avatar.beta.url) %>
+<% else %>
+  <%= image_tag "avatar-default.svg" %>
+<% end %>
+<%= button_to 'Check-in/out', user_checkin_path, class: 'btn btn-success', method: :patch %>

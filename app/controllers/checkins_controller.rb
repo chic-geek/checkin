@@ -5,6 +5,10 @@ class CheckinsController < ApplicationController
 
   def update
     @user = User.find(params[:user_id])
-    render 'show'
+    if @user.update_attributes(params.permit(:checked_in))
+      redirect_to user_checkin_path(@user), notice: "You're all checked in!"
+    else
+      render 'show'
+    end
   end
 end

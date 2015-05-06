@@ -1,7 +1,23 @@
-<h1>Checkin show template</h1>
-<% if @user.avatar? %>
-  <%= image_tag(@user.avatar.beta.url) %>
-<% else %>
-  <%= image_tag "avatar-default.svg" %>
-<% end %>
-<%= button_to 'Check-in/out', user_checkin_path, class: 'btn btn-success', method: :patch, data: { :"checkin-button" => true, :"user-id" => @user.id } %>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="card card-type-form card-centered card-content-centered">
+      <h2 class="card-title">
+        You are
+        <% if @user.checked_in? %>
+          checked in
+        <% else %>
+          checked out
+        <% end %>
+      </h2>
+      <div class="card-avatar card-avatar-beta-size">
+        <% if @user.avatar? %>
+          <%= image_tag(@user.avatar.beta.url) %>
+        <% else %>
+          <%= image_tag "avatar-default.svg" %>
+        <% end %>
+      </div>
+      <%= button_to 'Check-out', user_checkin_path(checked_in: false), class: 'btn btn-lg btn-danger', style: "#{@user.checked_in? ? '' : 'display:none'}", method: :patch, data: { :"checkin-button" => false, :"user-id" => @user.id } %>
+      <%= button_to 'Check-in', user_checkin_path(checked_in: true), class: 'btn btn-lg btn-success', style: "#{!@user.checked_in? ? '' : 'display:none'}", method: :patch, data: { :"checkin-button" => true, :"user-id" => @user.id } %>
+    </div>
+  </div>
+</div>

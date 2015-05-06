@@ -52,23 +52,27 @@ $(document).ready(function(){
     // wrap it in a jQuery object.
     var clickedElement = $(event.target);
 
-    // The delete button needs a data-todo-id attribute, e.g.
-    // <button data-todo-id="7" data-delete-todo-button="true">Delete</button>
     var userId = clickedElement.data("user-id");
+    var checkinStatus = clickedElement.data("checkin-button"); // changes to a boolean
 
     var ajaxOptions = {
       type: "PATCH",
       // headers: { "Authorization": getAuthToken() },
       url: "/api/v1/users/" + userId,
       dataType: "json",
-      contentType: "application/json; charset=utf-8"
+      contentType: "application/json; charset=utf-8",
+      data: JSON.stringify({ "checked_in": checkinStatus })
     };
 
     function checkout() {
-      // Assumes that the delete button is a child element of the
-      // todo's table row.
-      clickedElement.attr('value', 'Checked out');
+      clickedElement.hide();
+      $('[data-checkin-button="'+ !checkinStatus +'"]').show(); // flips to the opposite value
     };
+
+    function handleError() {
+      alert('Error!');
+    };
+
     $.ajax(ajaxOptions).done(checkout).fail(handleError);
 
   };

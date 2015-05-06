@@ -8,6 +8,10 @@
 $card-background-color: rgb(247, 247, 247);
 $card-border-color: rgb(230, 230, 230);
 
+$card-avatar-alpha-size: $avatar-alpha-size;
+$card-avatar-beta-size: $avatar-beta-size;
+$card-avatar-gamma-size: $avatar-gamma-size;
+
 // Module core
 // ------------------------------------------------------------------------
 .card {
@@ -74,4 +78,17 @@ $card-border-color: rgb(230, 230, 230);
 .card-centered {
   margin-left: auto;
   margin-right: auto;
+}
+
+.card-avatar-beta-size {
+  margin-bottom: 20px;
+
+  img {
+    height: $card-avatar-beta-size;
+    width: $card-avatar-beta-size;
+  }
+}
+
+.card-content-centered {
+  text-align: center;
 }
